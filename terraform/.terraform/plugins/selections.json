@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/terraform-providers/postgresql": {
+    "hash": "h1:XoFYBv4TT44nddycaurd4lYzIuWBx9JJzmrvcTDYX9A=",
+    "version": "1.7.1"
+  }
+}
