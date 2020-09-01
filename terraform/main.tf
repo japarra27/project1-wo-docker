@@ -3,7 +3,7 @@ provider "postgresql" {
   port            = 5432
   database        = "postgres"
   username        = "postgres"
-  password        = "123456"
+  password        = "postgres"
   sslmode         = "require"
   connect_timeout = 15
 }
@@ -12,6 +12,7 @@ resource "postgresql_role" "my_role" {
   name     = "user"
   login    = true
   password = "123456"
+  superuser = true
 }
 
 resource "postgresql_database" "v0_back" {
@@ -21,4 +22,6 @@ resource "postgresql_database" "v0_back" {
   lc_collate        = "C"
   connection_limit  = -1
   allow_connections = true
+
+  depends_on = [postgresql_role.my_role]
 }
