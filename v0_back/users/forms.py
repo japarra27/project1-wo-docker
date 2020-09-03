@@ -1,6 +1,8 @@
 from django.contrib.auth import forms, get_user_model
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.forms import ModelForm
+from .models import *
 
 User = get_user_model()
 
@@ -28,3 +30,8 @@ class UserCreationForm(forms.UserCreationForm):
             return username
 
         raise ValidationError(self.error_messages["duplicate_username"])
+
+class CreateProjectForm(ModelForm):
+    class Meta:
+        model = Project
+        fields = ('project_name', 'project_description', 'project_price')

@@ -1,1 +1,29 @@
 {% extends "base.html" %}
+
+<title>{% block title %}Inicio{% endblock title %}</title>
+
+{% block content %}    
+
+<div class="jumbotron text-center">
+    <h1>Bienvenido a DesignMatch</h1>
+    <p>Resize this responsive page to see the effect!</p>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Servicios</h3>
+        <p>Carreta 1</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Funcionamiento</h3>
+        <p>Carreta 2</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>No se que poner</h3>
+        <p>Carreta 3</p>
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %} 
